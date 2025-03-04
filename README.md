@@ -1,64 +1,109 @@
-# Student Grading System
+# Hotel Management System
 
-## Description
-This program is a **Student Grading System** that allows a **lecturer** to register students, record their marks, and view summaries. Students can also log in to view their individual marks.
+## Overview
+
+The **Hotel Management System** is a command-line application designed to streamline hotel operations, including customer registration, room booking, employee management, and administrative tasks. The system uses modular programming to ensure efficiency, ease of maintenance, and scalability.
 
 ## Features
-### Lecturer Functions:
-1. Register a student – Add a new student to the system.
-2. Record marks – Enter marks for assignments, midterms, and projects.
-3. View all marks – Display all students' marks and grades.
-4. Summary record – Show the total number of students, average marks, and pass/fail percentages.
 
-### Student Functions:
-1. View marks – Students can check their individual marks and grade.
+- **User Authentication**
 
-## Usage Instructions
-1. Run the program.
-2. Choose between:
-   - Lecturer (Enter Lecturer ID to access the menu)
-   - Student (Enter Student ID to check marks)
-   - Exit to quit the program.
-3. If logged in as a lecturer, follow the menu options to register students, enter marks, or view reports.
-4. If logged in as a student, enter a valid Student ID to view recorded marks.
+  - Customers, Employees, and Administrators have distinct roles.
+  - Secure login system for each user type.
 
-## Input Constraints
-- Lecturer ID must be "2223045".
-- Student IDs are case-insensitive.
-- Marks must be within valid ranges:
-  - Assignment: 0 - 25
-  - Midterm: 0 - 25
-  - Project: 0 - 50
+- **Customer Management**
 
-## Grading System
-| Total Marks (out of 100) | Grade |
-|--------------------------|-------|
-| 85 - 100                 | A     |
-| 80 - 84                  | A-    |
-| 75 - 79                  | B+    |
-| 70 - 74                  | B     |
-| 65 - 69                  | B-    |
-| 60 - 64                  | C+    |
-| 55 - 59                  | C     |
-| 50 - 54                  | C-    |
-| 45 - 49                  | D+    |
-| 40 - 44                  | D     |
-| 0 - 39                   | F     |
+  - Register new customers.
+  - View and edit customer information.
+  - Book rooms and view billing details.
 
-## Error Handling
-- Invalid input prompts an error message and re-requests input.
-- If no students are registered, the system prevents mark entry.
-- If no marks are recorded, the system prevents viewing summary data.
+- **Accommodation Management**
 
-## Notes
-- The system supports up to 100 students.
-- Student IDs are automatically converted to lowercase for consistency.
+  - View available rooms.
+  - Book rooms and modify reservations.
+  - Edit accommodation details (admin access only).
 
-## Future Enhancements
-- Implement file storage for persistence.
-- Add authentication for students.
-- Improve UI with a graphical interface.
+- **Employee Management**
 
-## Author
-Developed by Louis Chua Khai Yi, Toh Bin Bin, Tan Jing Hong, and Lieng Yu Hao
+  - Employee registration and login.
+  - View assigned roles and responsibilities.
 
+- **Admin Controls**
+
+  - Manage room pricing and availability.
+  - Update admin credentials securely.
+
+- **Data Persistence**
+
+  - Stores data in binary files (`customer.dat`, `employee.dat`, `accommodation.dat`, `admin.dat`) to retain information across sessions.
+
+## File Structure
+
+```
+├── groupAssignment.c              # Main program file
+├── accommodation_functions.c      # Functions for managing accommodations
+├── customer_functions.c           # Functions for handling customer data
+├── employee_functions.c           # Functions for managing employees
+├── admin_functions.c              # Functions for administrative controls
+├── utility_functions.c            # Input validation and string manipulation
+├── input_output_info.c            # Data storage and retrieval functions
+├── headers/                       # Header files for modularization
+│   ├── accommodation_functions.h
+│   ├── customer_functions.h
+│   ├── employee_functions.h
+│   ├── admin_functions.h
+│   ├── utility_functions.h
+│   ├── input_output_info.h
+```
+
+## Installation & Compilation
+
+### **Requirements**
+
+- **GCC Compiler** (for compiling C programs)
+- Compatible with Windows/Linux/MacOS
+
+### **Compiling the Program**
+
+To compile the project, use the following command:
+
+```sh
+gcc -o hotel groupAssignment.c accommodation_functions.c customer_functions.c employee_functions.c admin_functions.c utility_functions.c input_output_info.c -Wall
+```
+
+### **Running the Program**
+
+After compilation, run the program using:
+
+```sh
+./hotel
+```
+
+## Usage
+
+1. **Start the program**: Run `./hotel` to launch the system.
+2. **Main Menu**: Choose to login, register, or exit.
+3. **Login Options**: Select Customer, Employee, or Administrator login.
+4. **Customer Features**: Book rooms, view/edit personal details, and check bills.
+5. **Employee Features**: View assigned roles, customer list, and accommodations.
+6. **Admin Features**: Modify room pricing, manage employees, and update admin credentials.
+
+## Future Improvements
+
+- Implement a **Graphical User Interface (GUI)** for better user experience.
+- Use a **database** instead of binary files for scalable data management.
+- Introduce **multi-language support** for accessibility.
+- Add **mobile compatibility** for remote management.
+
+## Contributors
+
+- **Louis Chua Khai Yi**
+- **Toh Bin Bin**
+- **Tan Jing Hong**
+- **Lieng Yu Hao**
+
+## License
+
+This project is open-source and can be modified and distributed under the MIT License.
+
+create by 
