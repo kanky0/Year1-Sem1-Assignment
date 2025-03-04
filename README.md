@@ -105,5 +105,3 @@ After compilation, run the program using:
 ## License
 
 This project is open-source and can be modified and distributed under the MIT License.
-
-create by 
