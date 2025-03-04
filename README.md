@@ -40,7 +40,7 @@ The **Hotel Management System** is a command-line application designed to stream
 ## File Structure
 
 ```
-├── groupAssignment.c              # Main program file
+├── main.c                         # Main program file
 ├── accommodation_functions.c      # Functions for managing accommodations
 ├── customer_functions.c           # Functions for handling customer data
 ├── employee_functions.c           # Functions for managing employees
@@ -68,7 +68,7 @@ The **Hotel Management System** is a command-line application designed to stream
 To compile the project, use the following command:
 
 ```sh
-gcc -o hotel groupAssignment.c accommodation_functions.c customer_functions.c employee_functions.c admin_functions.c utility_functions.c input_output_info.c -Wall
+gcc -o hotel main.c accommodation_functions.c customer_functions.c employee_functions.c admin_functions.c utility_functions.c input_output_info.c -Wall
 ```
 
 ### **Running the Program**
